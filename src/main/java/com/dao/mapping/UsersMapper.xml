@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.IUsersDao">
+	<!-- 结果映射 -->
+	<resultMap type="Users" id="SelRM1">
+  	     <id property="id" column="ID"/>
+  	     <result property="lname" column="LNAME"/>
+  	     <result property="lpass" column="LPASS"/>
+  	     <result property="rname" column="RNAME"/>  	     	    
+  	</resultMap>  	
+  	
+  	
+	<!-- 登录 -->
+	<select id="login" resultMap="SelRM1" parameterType="Map">
+		SELECT * FROM Q_USERS WHERE LNAME=#{lname} AND LPASS=#{lpass}
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
